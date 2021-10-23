@@ -1,0 +1,36 @@
+<div class="container" style="margin: 30px;">
+
+  <div class="jumbotron py-2">
+    <h1 class="display-4 text-center" >
+      Danh sách phòng ban
+    </h1>
+  </div>
+
+  <div style="padding: 10px;">
+    <app-department-update></app-department-update>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Tên phòng ban</th>
+          <th style="padding-right: 50px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of service.list">
+          <td (click)="populateForm(pd)">{{pd.Name}}</td>
+          <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click) = "onDelete(pd.Id)">
+          </i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,42 @@
+<div  ng-controller="namesCtrl" style="height: 100%; width: 1200px; background-color: white;" >
+
+    <p style="font-size: 30px;" >Số bàn:
+    <input type="text" [(ngModel)]="tbName" ></p> 
+        <!-- Test available *ngIf=menu.avalable -->
+  
+    <!-- <ng-container *ngFor="let bill of Bills | filter: tbName : 'TableName' " > -->
+    
+   
+        
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th> Bàn </th>
+          <th> Thời gian nhận đơn </th>
+          <th> Tổng tiền </th>
+          <th style="text-align: center;"> Tình trạng </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let bill of Bservice.list| filter: tbName : 'TableName'">
+          <!-- <ng-container *ngFor="let bill of Bills | filter: tbName : 'TableName' " > -->
+            <td>{{bill.TableName}}</td>
+            <td>{{bill.DateCheckIn}}</td>
+            <td>{{bill.TotalPrice}}</td>
+            <td>
+              <div *ngIf="checkstate(bill.OrderList); then content else other_content"></div>
+              <ng-template #content>
+                <p style="background-color: greenyellow;text-align: center"> Hoàn thành </p>
+              </ng-template>
+            
+              <ng-template #other_content>
+              <p style="background-color: gray;color: white; text-align: center; "> Chưa hoàn tất</p>
+              </ng-template>  
+            </td>
+            <td (click)="populateForm(bill)" style="color: blue;">Chi tiết</td> 
+        </tr>
+      </tbody>
+    </table>
+</div>
+

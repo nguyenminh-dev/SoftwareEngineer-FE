@@ -1,0 +1,60 @@
+<div class="jumbotron py-1">
+    <h4 class="modal-title" id="modal-basic-title" style="text-align: center; font-size: 20px">Thêm vào Order</h4>
+  </div>
+  <div class="modal-body">
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="Id" [(ngModel)]="service.formData.Id" />
+  <input type="hidden" name="Status" [(ngModel)]="service.formData.Status" />
+  <input type="hidden" name="BillID" [(ngModel)]="service.formData.BillID" />
+  <input type="hidden" name="DrinkID" [(ngModel)]="service.formData.DrinkID" />
+  <div class="form-group">
+      <label>Tên món</label>
+      <input class="form-control form-control-lg" placeholder="Tên món" name="DrinkName" readonly
+          #DrinkName="ngModel" [(ngModel)]="service.formData.DrinkName"
+          required [class.invalid]="DrinkName.invalid && DrinkName.touched">
+            <!-- <select class="form-control" [(ngModel)]="service.formData.DrinkID" >
+              <option value="{{pd.Id}}" *ngFor="let pd of this.DrinkService.list">
+                {{pd.Name}}
+              </option>
+            </select> -->
+  </div>
+
+  <div class="form-group">
+    <label>Giá</label>
+    <input class="form-control form-control-lg" placeholder="Giá" name="Price"
+        #Price="ngModel" [(ngModel)]="service.formData.Price" (keyup)="updateTotal()"
+        required [class.invalid]="Price.invalid && Price.touched">
+</div>
+
+  <div class="form-group">
+      <label>Số lượng</label>
+      <input class="form-control form-control-lg" placeholder="Số lượng" name="Quantity"
+          #Quantity="ngModel" [(ngModel)]="service.formData.Quantity"
+          required [class.invalid]="Quantity.invalid && Quantity.touched"
+          (keyup)="updateTotal()">
+  </div>
+  <div class="form-group">
+    <label>Yêu cầu của khách</label>
+    <input class="form-control form-control-lg" placeholder="Yêu cầu của khách" name="CustomReq"
+        #CustomReq="ngModel" [(ngModel)]="service.formData.CustomReq"
+        >
+  </div>
+  <div class="form-group">
+      <label >Ghi chú</label>
+      <input class="form-control form-control-lg" placeholder="Ghi chú" name="Note"
+          #Note="ngModel" [(ngModel)]="service.formData.Note"
+          >
+  </div>
+  <div class="form-group">
+    <label >Tổng</label>
+    <input class="form-control form-control-lg" placeholder="Tổng" name="Total" readonly
+        #Total="ngModel" [(ngModel)]="service.formData.Total"
+        required [class.invalid]="Total.invalid && Total.touched">
+</div>
+
+  <div class="form-group">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid" style="width: 100%; margin-top: 10px;">Thêm</button>
+    <button class="btn btn-primary btn-lg btn-block" type="button" style="width: 100%; margin-top: 10px;" (click)="activeModal.close('Close click')">Hủy</button>
+    </div>
+</form>
+</div>

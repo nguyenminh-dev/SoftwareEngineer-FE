@@ -1,0 +1,50 @@
+<div class="container" style="margin: 30px;">
+
+  <div class="jumbotron py-2">
+    <h1 class="display-4 text-center" >
+      Danh sách đồ uống
+    </h1>
+  </div>
+
+  <div style="padding: 10px;">
+    <app-menu-create></app-menu-create>
+  </div>
+
+  <div>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Tên món</th>
+          <th>Danh mục Menu</th>
+          <th>Giá</th>
+          <th>Trạng thái</th>
+          <th style="padding-right: 50px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of service.list">
+          <td (click)="populateForm(pd)">{{pd.Name}}</td>
+          <td (click)="populateForm(pd)">{{pd.CategoryName}}</td>
+          <td (click)="populateForm(pd)">{{pd.Price}}đ</td>
+          <td (click)="populateForm(pd)">
+            <!-- {{pd.Available}} -->
+            <div *ngIf="pd.Available; else elseBlock">
+              <p style="color: green;">Có sẵn</p>
+            </div>
+            <ng-template #elseBlock>
+              <p style="color: red;">Không có sẵn</p>
+            </ng-template>
+          </td>
+          <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click) = "onDelete(pd.Id)">
+          </i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <router-outlet></router-outlet>
+
+</div>

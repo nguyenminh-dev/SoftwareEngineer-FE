@@ -1,0 +1,111 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 700px;
+    background: #828283;
+    color: #fff;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+#sidebar ul p {
+    color: rgb(255, 0, 0);
+    padding: 10px;
+}
+
+#sidebar ul li a  {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #fff
+}
+
+#sidebar ul li a:hover {
+    color: #000000;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: rgb(255, 255, 255);
+    background: #6b6568;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #ffffff;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+#content {
+    width: calc(100% - 250px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+#content.active {
+    width: 100%;
+}
+mat-expansion-panel
+{
+    
+    color: #ffffff;
+    background: #828283;
+}

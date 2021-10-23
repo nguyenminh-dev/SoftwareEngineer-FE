@@ -1,0 +1,55 @@
+<div 
+    fxLayout="row wrap" 
+    fxLayout.lt-sm="column" 
+    fxLayoutGap="32px" 
+    fxLayoutAlign="flex wrap"
+    style="margin: 32px"
+    >
+        <!-- Test available *ngIf=menu.avalable -->
+    <div style="background-color: aliceblue;text-align: center; border: solid black;padding:10px; width: 500px;">
+        <h1>{{Bservice.formData.TableName}}</h1>
+        <!-- <label class="switch">
+          <mat-checkbox type="checkbox" data-bind="checked">
+          <span class="slider round"></span>
+          </mat-checkbox>
+        </label>   -->
+        <h2>Ngày nhận đơn: {{Bservice.formData.DateCheckIn}}</h2>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Món</th>
+              <th>Số lượng</th>
+              <th>Yêu cầu</th>
+              <th>Ghi chú</th>
+              <th>Tiền</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ords of Bservice.formData.OrderList">
+              <td>{{ords.DrinkName}}</td>
+              <td >{{ords.Quantity}}</td>
+              <td >{{ords.CustomReq}}</td>
+              <td>{{ords.Note}}</td>
+              <td>{{ords.Price}}</td>
+            </tr>
+          </tbody>
+        </table>
+          
+
+
+        
+        <h1>Tổng: {{Bservice.formData.TotalPrice}} VNĐ</h1>
+        <h1>Khuyến mãi: <input type="number" (keyup)="Discount($event)" > </h1> 
+        <h1>Tổng hóa đơn: {{this.BillPrice}} VNĐ</h1>
+      <div  *ngIf="checkstate(Bservice.formData.OrderList);then content else other_content"></div>
+        <ng-template #content>
+          <button style="background-color: greenyellow;"(click)="Complete(Bservice.formData.Id);activeModal.close()"> Xác nhận thanh toán </button>
+      </ng-template>
+      
+      <ng-template #other_content>
+        <button style="background-color: gray;color: white;" disabled> Đơn chưa hoàn tất</button>
+      </ng-template>
+        
+    </div>
+    <button class="btn btn-primary btn-lg btn-block" type="button" style="width: 100%; margin-top: 10px;" (click)="activeModal.close()">Hủy</button>
+    </div>

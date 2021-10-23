@@ -1,0 +1,60 @@
+@import '~ngx-toastr/toastr';
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+.pushback
+{
+    z-index: -20;
+}
+.container{
+  width: 1030px;
+  background-color: white;
+  
+  padding: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.form-group label {
+  color: #343A40;
+  font-size: 1.3em;
+  width: 130px;
+}
+.form-group{
+  padding: 0px 15px;
+}
+
+.form-group input {
+  font-weight: 500;
+  color: black;
+}
+
+.form-group input::placeholder {
+  color: #000000;
+  font-weight: 300;
+}
+
+thead th{
+  font-weight: 400;
+}
+
+table tbody tr:hover {
+  background-color: #fffbf2;
+  cursor: pointer;
+}
+
+/*for invalid form controls*/
+input.invalid {
+  border-color: red;
+  margin: 2px;
+}
+
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+  z-index: 99999 !important;
+}
+
+
