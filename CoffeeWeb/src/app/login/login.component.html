@@ -1,10 +1,10 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="25">
-        <mat-toolbar color="primary">Login Page</mat-toolbar>
+        <mat-toolbar color="primary">Đăng nhập</mat-toolbar>
         <div *ngIf="isLoginError" style="color:red">
-            <i style="font-size: medium"class="material-icons">error</i> Incorrect username or password
+            <i style="font-size: medium"class="material-icons">error</i> Nhập sai tài khoản hoặc mật khẩu
         </div>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form"  [formGroup]="formGroup" 
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form"  [formGroup]="formGroup"
         (ngSubmit)="loginProcess()">
             <mat-form-field>
                 <input matInput type="text" formControlName="username" placeholder="Username">
@@ -12,7 +12,7 @@
             <mat-form-field>
                 <input matInput type="password" formControlName="password" placeholder="Password">
             </mat-form-field>
-            <button mat-button type="submit" >Login</button>
+            <button mat-button type="submit" >Đăng nhập</button>
         </form>
     </mat-card>
 </div>

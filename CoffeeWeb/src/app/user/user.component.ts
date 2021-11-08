@@ -26,12 +26,12 @@ export class UserComponent implements OnInit {
   }
 
   onDelete(Id: string) {
-    if (confirm('Bạn có chắc chắn muốn xóa nhân viên này?')) {
+    if (confirm('Bạn có chắc chắn muốn xóa tài khoản?')) {
       this.service.deleteUser(Id)
         .subscribe(
           res => {
             this.service.refreshList();
-            this.toastr.error("Đã xóa nhân viên");
+            this.toastr.error("Đã xóa tài khoản");
           },
           err => { console.log(err) }
         )

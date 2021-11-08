@@ -1,5 +1,5 @@
   <div class="jumbotron py-1">
-    <h4 class="modal-title" id="modal-basic-title" style="text-align: center; font-size: 20px">Cập nhật thông tin nhân viên</h4>
+    <h4 class="modal-title" id="modal-basic-title" style="text-align: center; font-size: 20px">Cập nhật thông tin khách hàng</h4>
   </div>
 
 <div class="modal-body">
@@ -7,7 +7,7 @@
 <form novalidate autocomplete="off" #form="ngForm" (submit)="updateRecord(form)">
   <input type="hidden" name="Id" [value]="service.formData.Id" />
   <div class="form-group">
-      <label>Tên nhân viên</label>
+      <label>Khách hàng</label>
       <input class="form-control form-control-lg" placeholder="Họ và tên" name="FullName"
           #FullName="ngModel" [(ngModel)]="service.formData.FullName"
           required [class.invalid]="FullName.invalid && FullName.touched">
@@ -42,13 +42,6 @@
         {{pd.Name}}
       </option>
     </select>
-  </div>
-
-  <div class="form-group">
-      <label >Ngày vào làm</label>
-      <input type = "datetime-local" class="form-control form-control-lg" placeholder="Ngày vào làm" name="BeginWork"
-          #BeginWork="ngModel" [(ngModel)]="service.formData.BeginWork"
-          required [class.invalid]="BeginWork.invalid && BeginWork.touched">
   </div>
 
   <div class="form-group">

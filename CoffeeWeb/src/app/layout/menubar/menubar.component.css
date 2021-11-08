@@ -5,10 +5,10 @@
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    min-height: 700px;
-    background: #828283;
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 100%;
+    background: #E99326;
     color: #fff;
     transition: all 0.3s;
     z-index: 10;
@@ -105,7 +105,7 @@ a.article:hover {
 }
 mat-expansion-panel
 {
-    
+
     color: #ffffff;
     background: #828283;
 }

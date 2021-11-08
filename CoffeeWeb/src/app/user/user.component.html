@@ -2,7 +2,7 @@
 
   <div class="jumbotron py-2">
     <h1 class="display-4 text-center" >
-      Danh sách nhân viên
+      Tài khoản
     </h1>
   </div>
 
@@ -14,11 +14,9 @@
     <table class="table table-striped">
       <thead class="thead-dark">
         <tr>
-          <th>Tên nhân viên</th>
+          <th>Tên khách hàng</th>
           <th>Địa chỉ</th>
           <th>Số điện thoại</th>
-          <th>Phòng ban</th>
-          <th>Ngày vào làm</th>
           <th style="padding-right: 50px;"></th>
         </tr>
       </thead>
@@ -27,8 +25,6 @@
           <td (click)="populateForm(pd)">{{pd.FullName}}</td>
           <td (click)="populateForm(pd)">{{pd.Address}}</td>
           <td (click)="populateForm(pd)">{{pd.PhoneNumber}}</td>
-          <td (click)="populateForm(pd)">{{pd.DepartmentName}}</td>
-          <td (click)="populateForm(pd)">{{pd.BeginWork}}</td>
           <td>
             <i class="far fa-trash-alt fa-lg text-danger" (click) = "onDelete(pd.Id)">
           </i>

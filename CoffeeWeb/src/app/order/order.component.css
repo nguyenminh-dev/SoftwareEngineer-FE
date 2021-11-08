@@ -1,0 +1,25 @@
+.container {
+  margin: 50px;
+  Background-color: #fce4c5;
+}
+
+.button-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-search p {
+  font-size: 20px;
+}
+
+.input-search {
+  border-radius: 10px;
+  width: 300px;
+}
+
+.box {
+  border: 1px solid #E99326;
+  border-radius: 10px;
+  padding-left: 5px;
+}

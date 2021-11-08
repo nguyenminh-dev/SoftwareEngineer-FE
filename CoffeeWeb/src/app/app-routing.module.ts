@@ -38,7 +38,7 @@ const routes: Routes = [
         //   {path: 'create', component: UserFormComponent}
         // ]
       },
-      { 
+      {
         path: 'menu', component: MenuComponent,
         // children:
         // [
@@ -52,10 +52,9 @@ const routes: Routes = [
       // ]
     },
       { path: 'waiter', component: OrderComponent},
-      {path:'cashier',component:CashierComponent},
+      {path:'cashier',component: CashierComponent},
       {path:'bartender',component:BatenderComponent},
       {path: 'table', component: TableComponent}
-
     ]
 }
 ];

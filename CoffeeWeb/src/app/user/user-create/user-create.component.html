@@ -1,12 +1,12 @@
 <ng-template #content let-modal>
   <div class="jumbotron py-1">
-    <h4 class="modal-title" id="modal-basic-title" style="text-align: center; font-size: 18px">Thêm nhân viên</h4>
+    <h4 class="modal-title" id="modal-basic-title" style="text-align: center; font-size: 18px">Thêm khách hàng</h4>
   </div>
   <div class="modal-body">
     <form novalidate autocomplete="off" #form="ngForm" (submit)="insertRecord(form)">
       <input type="hidden" name="Id" value="service.formData.Id" />
       <div class="form-group">
-          <label>Tên nhân viên</label>
+          <label>Tên khách hàng</label>
           <input class="form-control form-control-lg" placeholder="Họ và tên" name="FullName"
               #FullName="ngModel" [(ngModel)]="service.formData.FullName"
               required [class.invalid]="FullName.invalid && FullName.touched">
@@ -23,6 +23,14 @@
               #PhoneNumber="ngModel" [(ngModel)]="service.formData.PhoneNumber"
               required [class.invalid]="PhoneNumber.invalid && PhoneNumber.touched">
       </div>
+
+      <div class="form-group">
+        <label>Tài Khoản</label>
+        <input class="form-control form-control-lg" placeholder="Tài khoản" name="UserName"
+            #UserName="ngModel" [(ngModel)]="service.formData.UserName"
+            required [class.invalid]="UserName.invalid && UserName.touched">
+    </div>
+
       <div class="form-group">
         <label>Mật khẩu</label>
         <input type="password" class="form-control form-control-lg" placeholder="Mật khẩu" name="Password"
@@ -40,21 +48,6 @@
         </select>
       </div>
 
-
-      <div class="form-group">
-          <label >Ngày vào làm</label>
-
-          <input
-           type = "datetime-local"
-          class="form-control form-control-lg"
-
-           name="BeginWork"
-          #BeginWork="ngModel" [(ngModel)]="service.formData.BeginWork"
-          required [class.invalid]="BeginWork.invalid && BeginWork.touched"
-          >
-
-      </div>
-
       <div class="modal-footer">
         <button type="submit" class="btn btn-outline-dark" [disabled]="form.invalid" (click)="modal.close()">Lưu</button>
         <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Hủy</button>
@@ -63,6 +56,4 @@
   </div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)" >Thêm nhân viên</button>
-
-
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)" >Thêm khách hàng</button>

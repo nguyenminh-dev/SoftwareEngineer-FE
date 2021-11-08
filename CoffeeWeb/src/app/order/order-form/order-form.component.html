@@ -12,11 +12,6 @@
       <input class="form-control form-control-lg" placeholder="Tên món" name="DrinkName" readonly
           #DrinkName="ngModel" [(ngModel)]="service.formData.DrinkName"
           required [class.invalid]="DrinkName.invalid && DrinkName.touched">
-            <!-- <select class="form-control" [(ngModel)]="service.formData.DrinkID" >
-              <option value="{{pd.Id}}" *ngFor="let pd of this.DrinkService.list">
-                {{pd.Name}}
-              </option>
-            </select> -->
   </div>
 
   <div class="form-group">
@@ -24,7 +19,7 @@
     <input class="form-control form-control-lg" placeholder="Giá" name="Price"
         #Price="ngModel" [(ngModel)]="service.formData.Price" (keyup)="updateTotal()"
         required [class.invalid]="Price.invalid && Price.touched">
-</div>
+  </div>
 
   <div class="form-group">
       <label>Số lượng</label>

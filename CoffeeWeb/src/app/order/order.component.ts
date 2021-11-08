@@ -28,7 +28,7 @@ export class OrderComponent implements OnInit {
     public billservice: BillService,
     public tableservice: TableService,
     private route: ActivatedRoute, private router: Router) { }
-
+    search: string
   ngOnInit(): void {
     this.service.refreshList();
     this.categoryservice.refreshList();

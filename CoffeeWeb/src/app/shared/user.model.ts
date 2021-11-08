@@ -1,6 +1,7 @@
 
 export class User {
   Id: string;
+  UserName: string;
   FullName: string;
   PhoneNumber: string;
   Password: string;
@@ -13,6 +14,7 @@ export class User {
 
   constructor() {
     this.Id = "";
+    this.UserName = "";
     this.FullName = "";
     this.PhoneNumber = "";
     this.Password = "";
