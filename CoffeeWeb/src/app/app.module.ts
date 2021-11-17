@@ -10,8 +10,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DepartmentComponent } from './department/department.component';
-import { DepartmentFormComponent } from './department/department-form/department-form.component';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderLayout1Component } from './layout/header-layout1/header-layout1.component';
@@ -27,23 +25,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthGuard } from './auth/auth.guard';
-import { UserComponent } from './user/user.component';
-import { UserFormComponent } from './user/user-form/user-form.component';
 import { MenuComponent } from './menu/menu.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import { MenuFormComponent } from './menu/menu-form/menu-form.component';
 import { OrderComponent } from './order/order.component';
-import { CategoryComponent } from './category/category.component';
-import { DepartmentUpdateComponent } from './department/department-update/department-update.component'
 import {MatSelectModule} from '@angular/material/select';
-import { CategoryFormComponent } from './category/category-form/category-form.component';
-import { TableComponent } from './table/table.component';
-import { UserCreateComponent } from './user/user-create/user-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CashierComponent } from './home/cashier/cashier.component';
-import { CategoryUpdateComponent } from './category/category-update/category-update.component';
 import { MenuCreateComponent } from './menu/menu-create/menu-create.component';
 import { OrderFormComponent } from './order/order-form/order-form.component';
 import { OrderUpdateComponent } from './order/order-update/order-update.component';
@@ -54,30 +44,19 @@ import { CashierFormComponent } from './home/cashier/cashier-form/cashier-form.c
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
-    DepartmentComponent,
-    DepartmentFormComponent,
     HeaderLayout1Component,
     HomeComponent,
     Background1Component,
     Layout1Component,
     MenubarComponent,
     LoginComponent,
-    UserComponent,
-    UserFormComponent,
     MenuComponent,
     MenuFormComponent,
     OrderComponent,
-    DepartmentUpdateComponent,
-    CategoryComponent,
-    CategoryFormComponent,
     FilterPipe,
-    
-    TableComponent,
-    UserCreateComponent,
     CashierComponent,
-    CategoryUpdateComponent,
     MenuCreateComponent,
     OrderFormComponent,
     OrderUpdateComponent,
@@ -112,10 +91,7 @@ import { CashierFormComponent } from './home/cashier/cashier-form/cashier-form.c
   providers: [AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
-    UserFormComponent,
-    DepartmentFormComponent,
-    MenuFormComponent,
-    CategoryFormComponent
+    MenuFormComponent
 ],
 })
 export class AppModule { }
