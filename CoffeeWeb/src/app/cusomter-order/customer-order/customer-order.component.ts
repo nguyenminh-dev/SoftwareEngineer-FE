@@ -13,7 +13,7 @@ export class CustomerOrderComponent implements OnInit {
   currentCart: ItemOrder[] = [];
 
   constructor(private customerOrderService: CustomerOrderService) {
-    this.currentCategory = customerOrderService.GetMenu();
+    customerOrderService.GetMenu().subscribe(menu => this.currentCategory = menu);
   }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class CustomerOrderComponent implements OnInit {
   search(searchStr: string)
   {
     console.log(`search ${searchStr}`);
-    this.currentCategory = this.customerOrderService.GetServiceWithFilter(searchStr);
+    this.customerOrderService.GetMenuWithFilter(searchStr).subscribe(menu => this.currentCategory = menu);
   }
 
   onFoodSelect(food: Food): void {

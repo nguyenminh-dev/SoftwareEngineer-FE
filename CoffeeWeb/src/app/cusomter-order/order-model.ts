@@ -7,12 +7,12 @@ export const currencyFormater = new Intl.NumberFormat(
 
 export class Food
 {
-    id: string;
+    id: number;
     name: string;
     description: string;
     price: number;
     image_url: string;
-    constructor(id: string, name: string, description: string, price: number, image_url: string){
+    constructor(id: number, name: string, description: string, price: number, image_url: string){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,10 +61,10 @@ export class Order
 
 export class Category
 {
-    id: string;
+    id: number;
     name: string;
     foods: Food[]=[];
-    constructor(id: string, name: string, food: Food[]){
+    constructor(id: number, name: string, food: Food[]){
         this.id = id;
         this.name = name;
         this.foods = food;
