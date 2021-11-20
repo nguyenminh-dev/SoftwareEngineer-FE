@@ -57,9 +57,11 @@ export class CustomerOrderService {
         return filteredCategories;
     }
 
-    GetMenu(): Observable<Category[]>{
-        return of(this.GetDummyMenu());
-        return this.http.get<Drink[]>(this.baseURL)
+    GetMenu(hardCodeData: boolean): Observable<Category[]>{
+        if(hardCodeData)
+            return of(this.GetDummyMenu());
+        else
+            return this.http.get<Drink[]>(this.baseURL)
             .pipe(
                 map((drinks: Drink[]) => {
                     var categories: Category[] = [];
@@ -87,8 +89,8 @@ export class CustomerOrderService {
             ));
     }
 
-    GetMenuWithFilter(filterStr: string): Observable<Category[]>{
-        return this.GetMenu()
+    GetMenuWithFilter(hardCodeData: boolean, filterStr: string): Observable<Category[]>{
+        return this.GetMenu(hardCodeData)
         .pipe(
             map((categories: Category[]) => {
                 return this.FilterMenuWithSearchString(categories, filterStr);

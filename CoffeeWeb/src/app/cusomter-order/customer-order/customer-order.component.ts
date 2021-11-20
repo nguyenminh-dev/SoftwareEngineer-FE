@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerOrderService } from '../customer-order.service';
 import { Category, Food, ItemOrder, Order } from '../order-model';
 
@@ -12,20 +12,25 @@ export class CustomerOrderComponent implements OnInit {
   currentCategory: Category[] = [];
   currentSelected: Food|null;
   currentCart: Order = new Order();
-
+  hardCodeData: boolean;
   constructor(
+    private activatedroute: ActivatedRoute,
     private customerOrderService: CustomerOrderService,
     private router: Router) {
-    customerOrderService.GetMenu().subscribe(menu => this.currentCategory = menu);
   }
 
   ngOnInit(): void {
+    this.activatedroute.data.subscribe(data => {
+      this.hardCodeData = data?.hardcode_data??false;
+      console.log(this.hardCodeData);
+      this.customerOrderService.GetMenu(this.hardCodeData).subscribe(menu => this.currentCategory = menu);
+    })
   }
 
   search(searchStr: string)
   {
     console.log(`search ${searchStr}`);
-    this.customerOrderService.GetMenuWithFilter(searchStr).subscribe(menu => this.currentCategory = menu);
+    this.customerOrderService.GetMenuWithFilter(this.hardCodeData, searchStr).subscribe(menu => this.currentCategory = menu);
   }
 
   onFoodSelect(food: Food): void {

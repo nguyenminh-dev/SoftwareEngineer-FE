@@ -16,6 +16,7 @@ import { CustomerPaymentComponent } from './customer-payment/customer-payment.co
 
 const routes: Routes = [
   {path: '', component: CustomerOrderComponent},
+  {path: 'mvp', component: CustomerOrderComponent, data :{hardcode_data:true}},
   {path: 'payment', component: CustomerPaymentComponent},
   {path:'login', component:LoginComponent},
   {
