@@ -2,13 +2,13 @@
     <h1>CART</h1>
     <div class="cart-container">
         <ul>
-            <li *ngFor="let order of orders">
-                <app-cart-order-item-view [item]="order" (removeEvent)="remove($event)" (valueChanged)="onValueChanged($event)"></app-cart-order-item-view>
+            <li *ngFor="let order of order.items">
+                <app-cart-order-item-view [item]="order" (removeEvent)="remove($event)"></app-cart-order-item-view>
             </li>
         </ul>
     </div>
     <div class="payment">
-        <p class="child">Total: {{totalStr}}</p>
+        <p class="child">Total: {{order.priceStr}}</p>
         <button class="btn btn-primary child">Payment</button>
     </div>
 </div>

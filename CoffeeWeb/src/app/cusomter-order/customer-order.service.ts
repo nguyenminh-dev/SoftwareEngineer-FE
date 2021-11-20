@@ -58,6 +58,7 @@ export class CustomerOrderService {
     }
 
     GetMenu(): Observable<Category[]>{
+        return of(this.GetDummyMenu());
         return this.http.get<Drink[]>(this.baseURL)
             .pipe(
                 map((drinks: Drink[]) => {

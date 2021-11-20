@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerOrderService } from '../customer-order.service';
-import { Category, Food, ItemOrder } from '../order-model';
+import { Category, Food, ItemOrder, Order } from '../order-model';
 
 @Component({
   selector: 'app-customer-order',
@@ -10,7 +10,7 @@ import { Category, Food, ItemOrder } from '../order-model';
 export class CustomerOrderComponent implements OnInit {
   currentCategory: Category[] = [];
   currentSelected: Food|null;
-  currentCart: ItemOrder[] = [];
+  currentCart: Order = new Order();
 
   constructor(private customerOrderService: CustomerOrderService) {
     customerOrderService.GetMenu().subscribe(menu => this.currentCategory = menu);
@@ -35,10 +35,10 @@ export class CustomerOrderComponent implements OnInit {
   }
 
   onAddToCart(food: Food): void {
-    let cartItem:ItemOrder|undefined = this.currentCart.find(cartItem => cartItem.food.id == food.id);
+    let cartItem:ItemOrder|undefined = this.currentCart.items.find(cartItem => cartItem.food.id == food.id);
     if(cartItem == undefined) {
       cartItem = new ItemOrder(food, 0);
-      this.currentCart.unshift(cartItem);
+      this.currentCart.addItem(cartItem);
     }
     cartItem.setAmount(cartItem.amount + 1);
     console.log(cartItem);

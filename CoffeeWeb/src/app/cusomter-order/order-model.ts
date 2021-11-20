@@ -56,7 +56,21 @@ export class ItemOrder
 
 export class Order
 {
-    items: ItemOrder[];
+    items: ItemOrder[] = [];
+    public get priceStr() : string
+    {
+        let total = 0;
+        this.items.forEach(order => {
+          total += order.price;
+        });
+        return currencyFormater.format(total);
+    }
+    addItem(item: ItemOrder): void{
+        this.items.unshift(item);
+    }
+    remove(item: ItemOrder): void{
+        this.items.splice(this.items.indexOf(item), 1);
+    }
 }
 
 export class Category

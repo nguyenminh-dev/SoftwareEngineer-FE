@@ -9,7 +9,6 @@ import { ItemOrder } from '../order-model';
 export class CartOrderItemViewComponent implements OnInit {
   @Input() item: ItemOrder;
   @Output() removeEvent = new EventEmitter<ItemOrder>();
-  @Output() valueChanged = new EventEmitter<ItemOrder>();
   
   constructor() { }
 
@@ -20,11 +19,9 @@ export class CartOrderItemViewComponent implements OnInit {
     this.item.setAmount(this.item.amount - 1);
     if(this.item.amount <= 0)
       this.removeEvent.emit(this.item);
-    this.valueChanged.emit(this.item);
   }
 
   increase(): void {
     this.item.setAmount(this.item.amount + 1);
-    this.valueChanged.emit(this.item);
   }
 }
