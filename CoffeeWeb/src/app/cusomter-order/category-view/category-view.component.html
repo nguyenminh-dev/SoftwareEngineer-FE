@@ -1,0 +1,8 @@
+<div class="container">
+    <ul>
+        <li *ngFor="let category of categories">
+            <h2>{{category.name}}</h2>
+            <app-menu-view [menuItems]="category.foods" (foodClickEvent)="onFoodClick($event)"></app-menu-view>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,24 @@
+ul
+{ 
+    list-style: none;
+}
+
+.container
+{
+    width: 100%;
+    padding: 0;
+    margin: 0
+}
+
+.container ul
+{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container ul li
+{
+    margin-bottom: 50px;
+    width: 100%;
+}

@@ -1,0 +1,27 @@
+.container
+{
+    width: 100%;
+}
+
+.count
+{
+    display: flex;
+    width: 100%;
+}
+
+.count .btn
+{
+    width: 40px;
+    height: 40px;
+}
+
+.count p
+{
+    margin: 5px;
+    padding: 5px;
+}
+
+.card
+{
+    padding: 5px;
+}

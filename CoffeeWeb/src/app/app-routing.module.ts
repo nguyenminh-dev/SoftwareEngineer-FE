@@ -11,8 +11,10 @@ import { OrderComponent } from './order/order.component';
 import { CashierComponent } from './home/cashier/cashier.component';
 import { BartenderFormComponent } from './batender/bartender-form/bartender-form.component';
 import { BatenderComponent } from './batender/batender.component';
+import { CustomerOrderComponent } from './cusomter-order/customer-order/customer-order.component';
 
 const routes: Routes = [
+  {path: '', component: CustomerOrderComponent},
   {path:'login', component:LoginComponent},
   {
     path: '',

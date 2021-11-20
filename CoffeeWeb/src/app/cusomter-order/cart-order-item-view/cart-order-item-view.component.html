@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card">
+        <p>{{item.food.name}}</p>
+        <p>price: {{item.food.priceStr}}</p>
+        <p>total: {{item.priceStr}}</p>
+        <div class="count">
+            <button class="btn btn-secondary" type="button" (click)="decrease()">-</button>
+            <p>{{item.amount}}</p>
+            <button class="btn btn-secondary" type="button" (click)="increase()">+</button>
+        </div>
+    </div>
+</div>

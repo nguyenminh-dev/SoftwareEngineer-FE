@@ -1,0 +1,6 @@
+<div class="container">
+    <div class='header'><app-search-header (searchEvent)="search($event)"></app-search-header></div>
+    <div class='right-side-bar' ><app-sidebar-cart [orders]="currentCart"></app-sidebar-cart></div>
+    <div class='content'><app-category-view [categories]="currentCategory" (foodItemClickEvent)="onFoodSelect($event)"></app-category-view></div>
+    <div class='modal-popup' *ngIf="currentSelected"><app-food-detail-modal [item]="currentSelected" (dismissEvent)="onDismiss()" (addToCartEvent)="onAddToCart($event)"></app-food-detail-modal></div>
+</div>

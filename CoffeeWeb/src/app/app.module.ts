@@ -40,6 +40,14 @@ import { OrderUpdateComponent } from './order/order-update/order-update.componen
 import { BatenderComponent } from './batender/batender.component';
 import { BartenderFormComponent } from './batender/bartender-form/bartender-form.component';
 import { CashierFormComponent } from './home/cashier/cashier-form/cashier-form.component';
+import { CustomerOrderComponent } from './cusomter-order/customer-order/customer-order.component';
+import { SearchHeaderComponent } from './cusomter-order/search-header/search-header.component';
+import { MenuViewComponent } from './cusomter-order/menu-view/menu-view.component';
+import { SidebarCartComponent } from './cusomter-order/sidebar-cart/sidebar-cart.component';
+import { FoodDetailModalComponent } from './cusomter-order/food-detail-modal/food-detail-modal.component';
+import { MenuItemComponent } from './cusomter-order/menu-item/menu-item.component';
+import { CategoryViewComponent } from './cusomter-order/category-view/category-view.component';
+import { CartOrderItemViewComponent } from './cusomter-order/cart-order-item-view/cart-order-item-view.component';
 
 
 @NgModule({
@@ -62,7 +70,15 @@ import { CashierFormComponent } from './home/cashier/cashier-form/cashier-form.c
     OrderUpdateComponent,
     BatenderComponent,
     BartenderFormComponent,
-    CashierFormComponent
+    CashierFormComponent,
+    CustomerOrderComponent,
+    SearchHeaderComponent,
+    MenuViewComponent,
+    SidebarCartComponent,
+    FoodDetailModalComponent,
+    MenuItemComponent,
+    CategoryViewComponent,
+    CartOrderItemViewComponent
   ],
   imports: [
     //FilterModule,

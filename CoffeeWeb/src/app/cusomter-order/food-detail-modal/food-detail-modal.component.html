@@ -1,0 +1,13 @@
+<div class="container" *ngIf="item">
+    <div class="bg" (click)="dismiss()" >
+        <div class="card" (click)="$event.stopPropagation()">
+            <div>
+                <div class="card preview_image" [ngStyle]="{'background-image': 'url('+item.image_url+')'}"></div>
+                <h3>{{item.name}}</h3>
+                <h4>price: {{item.priceStr}}</h4>
+                <button class="btn btn-primary" (click)="addToCart()">Add to cart</button>
+                <p>{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

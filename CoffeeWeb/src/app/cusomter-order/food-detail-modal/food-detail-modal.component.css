@@ -1,0 +1,40 @@
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.bg
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card
+{
+    width: max(30vw, 250px);
+    margin: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.preview_image
+{
+    height: 120px;
+    width: 100%;
+    padding: 60 0;
+    margin: 0 auto;
+}
+
+.card div
+{
+    padding: 5px;
+}
