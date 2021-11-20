@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerOrderService } from '../customer-order.service';
 import { Category, Food, ItemOrder, Order } from '../order-model';
 
@@ -12,7 +13,9 @@ export class CustomerOrderComponent implements OnInit {
   currentSelected: Food|null;
   currentCart: Order = new Order();
 
-  constructor(private customerOrderService: CustomerOrderService) {
+  constructor(
+    private customerOrderService: CustomerOrderService,
+    private router: Router) {
     customerOrderService.GetMenu().subscribe(menu => this.currentCategory = menu);
   }
 
@@ -42,5 +45,11 @@ export class CustomerOrderComponent implements OnInit {
     }
     cartItem.setAmount(cartItem.amount + 1);
     console.log(cartItem);
+  }
+
+  onPaymentEvent(): void
+  {
+    console.log("pay");
+    this.router.navigate(['/payment'], {state: {cart: this.currentCart}});
   }
 }

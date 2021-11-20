@@ -12,9 +12,11 @@ import { CashierComponent } from './home/cashier/cashier.component';
 import { BartenderFormComponent } from './batender/bartender-form/bartender-form.component';
 import { BatenderComponent } from './batender/batender.component';
 import { CustomerOrderComponent } from './cusomter-order/customer-order/customer-order.component';
+import { CustomerPaymentComponent } from './customer-payment/customer-payment.component';
 
 const routes: Routes = [
   {path: '', component: CustomerOrderComponent},
+  {path: 'payment', component: CustomerPaymentComponent},
   {path:'login', component:LoginComponent},
   {
     path: '',

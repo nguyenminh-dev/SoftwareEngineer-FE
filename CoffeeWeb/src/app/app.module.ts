@@ -48,6 +48,7 @@ import { FoodDetailModalComponent } from './cusomter-order/food-detail-modal/foo
 import { MenuItemComponent } from './cusomter-order/menu-item/menu-item.component';
 import { CategoryViewComponent } from './cusomter-order/category-view/category-view.component';
 import { CartOrderItemViewComponent } from './cusomter-order/cart-order-item-view/cart-order-item-view.component';
+import { CustomerPaymentComponent } from './customer-payment/customer-payment.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { CartOrderItemViewComponent } from './cusomter-order/cart-order-item-vie
     FoodDetailModalComponent,
     MenuItemComponent,
     CategoryViewComponent,
-    CartOrderItemViewComponent
+    CartOrderItemViewComponent,
+    CustomerPaymentComponent
   ],
   imports: [
     //FilterModule,

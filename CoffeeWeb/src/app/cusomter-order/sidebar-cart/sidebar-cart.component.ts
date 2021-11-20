@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { currencyFormater, ItemOrder, Order } from '../order-model';
 
 @Component({
@@ -8,6 +8,7 @@ import { currencyFormater, ItemOrder, Order } from '../order-model';
 })
 export class SidebarCartComponent implements OnInit {
   @Input() order: Order;
+  @Output() paymentEvent = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -15,5 +16,10 @@ export class SidebarCartComponent implements OnInit {
 
   remove(order: ItemOrder): void {
     this.order.remove(order);
+  }
+
+  payment()
+  {
+    this.paymentEvent.emit();
   }
 }
